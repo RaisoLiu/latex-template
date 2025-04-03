@@ -68,5 +68,8 @@
                 "clean-build"
             ]
         }
-    ]
+    ],
+    "[latex]": {
+        "editor.wordWrap": "on"
+    }
 } 
