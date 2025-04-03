@@ -1,0 +1,72 @@
+{
+    "latex-workshop.latex.outDir": "%DIR%/build",
+    "latex-workshop.latex.tools": [
+        {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+                "-shell-escape",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-output-directory=%OUTDIR%",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "bibtex",
+            "command": "sh",
+            "args": [
+                "-c",
+                "cd %OUTDIR% && bibtex %DOCFILE%"
+            ]
+        },
+        {
+            "name": "copy-refs",
+            "command": "cp",
+            "args": [
+                "references/references.bib",
+                "%OUTDIR%"
+            ]
+        },
+        {
+            "name": "copy-figures",
+            "command": "cp",
+            "args": [
+                "-r",
+                "figures",
+                "%OUTDIR%"
+            ]
+        },
+        {
+            "name": "copy-pdf",
+            "command": "cp",
+            "args": [
+                "%OUTDIR%/main.pdf",
+                "%DIR%"
+            ]
+        },
+        {
+            "name": "clean-build",
+            "command": "sh",
+            "args": [
+                "-c",
+                "rm -rf %OUTDIR%/* && rm -rf %OUTDIR%/.??*"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "xelatex -> bibtex -> xelatex*2",
+            "tools": [
+                "copy-refs",
+                "copy-figures",
+                "xelatex",
+                "bibtex",
+                "xelatex",
+                "xelatex",
+                "copy-pdf",
+                "clean-build"
+            ]
+        }
+    ]
+} 

@@ -1,0 +1,94 @@
+\documentclass[12pt]{article}
+
+% 基本包
+\usepackage{xeCJK}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage[backend=bibtex,style=numeric]{biblatex}
+\addbibresource{references.bib}
+
+% 設置中文字體
+\setCJKmainfont{Heiti TC}
+\setCJKsansfont{Heiti TC}
+\setCJKmonofont{Heiti TC}
+
+% 統一設定列表間距
+\setlist{noitemsep,topsep=4pt}
+
+% 頁面設置
+\geometry{a4paper, margin=1in}
+\onehalfspacing
+\setlength{\parindent}{2em}  % 設定段落第一行縮排為兩個中文字寬度
+
+% 超連結設置
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={pdf title},
+    pdfauthor={Raiso Liu},
+    pdfsubject={pdf subject},
+    pdfkeywords={pdf keywords}
+}
+
+% 代碼塊設置
+\lstset{
+    frame=none,
+    breaklines=true,
+    postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookrightarrow\space}},
+    basicstyle=\ttfamily\scriptsize,
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    commentstyle=\color{green!60!black},
+    showstringspaces=false,
+    backgroundcolor=\color{gray!5},
+    xleftmargin=0em,
+    xrightmargin=0em,
+    linewidth=0.95\textwidth,
+    captionpos=b
+}
+
+% 設定所有 listings 環境
+\renewcommand{\lstlistingname}{Code}
+\renewcommand{\lstlistlistingname}{Code List}
+
+% 文檔信息
+\title{MaskGIT Report}
+\author{劉宇舜\\Department of Computer Science and Information Engineering\\National Yang Ming Chiao Tung University}
+\date{\today}
+
+\begin{document}
+
+% 添加封面
+\input{cover}
+
+% 添加目錄
+\setcounter{tocdepth}{2}
+\tableofcontents
+\newpage
+
+% 添加報告內容
+\input{sections/introduction}
+\input{sections/implementation}
+\input{sections/results}
+\input{sections/discussion}
+
+% 添加參考文獻
+\clearpage
+\printbibliography
+
+\end{document} 
