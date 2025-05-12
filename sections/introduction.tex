@@ -1,15 +1,3 @@
 \section{Introduction}
-我覺得最重要的發現就是不要閉門造車，我在先花費大量的時間、算力與資源之後，發現我的 Reward 都在 10 附近徘徊，大約在 400k 左右的 env steps 之後，就再也沒有進展了，即使我認真的去看 video，發現模型可以做出很帥的切球，但是有時候就是這些切球只要剛好讓對方可以打回來，那這球速就快到很難接到，所以可以穩定取得整場遊戲的勝利，但是沒有辦法穩定不失分，也就到不了最終作業要求的 19 分。
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.8\textwidth]{figures/IMG_3041 2.jpg}
-    \caption{訓練過程中 Episode Steps 的變化。}
-    \label{fig:episode_steps}
-\end{figure}
-
-
-在查閱了相關論文之後發現有一種方法 RainbowDQN 可以在 400k 左右的 env steps 之後，達到 19 分，我覺得我當初按照作業要求的實作與 RainbowDQN 的做法主要的差異在於 NoisyLayer 的實作，因為我之前的實作可能由於先學會了切球，然後在快速地獲得 Reward 之後，就卡在這個次優策略中，然而當我實作了 NoisyLayer 之後，發現雖然 Reward 收斂的變慢了，但是 Episode Steps 有顯著的拉高，\label{fig:episode_steps} 中的紅色線。
-
-
-這代表模型學會了穩定的來回對打，我認為這可能會是一個突破次優策略的關鍵。
+This is the introduction.
